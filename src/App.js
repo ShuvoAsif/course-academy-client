@@ -1,8 +1,6 @@
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
-import LeftSideNav from './components/LeftSideNav/LeftSideNav';
 import Main from './layout/Main';
 
 function App() {
