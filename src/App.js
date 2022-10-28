@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
+import CheckOut from './components/CheckOut/CheckOut';
 import CourseSummaryCard from './components/CourseSummaryCard/CourseSummaryCard';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Registration from './components/Registration/Registration';
 import Main from './layout/Main';
 
@@ -22,6 +24,10 @@ function App() {
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '/checkout',
+          element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
         },
         {
           path: '/login',

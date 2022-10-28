@@ -1,12 +1,13 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { FaEye, FaRegFilePdf, FaStar } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseSummaryCard = () => {
     const course = useLoaderData();
 
-    const { title, instructor, details, image_url, rating, total_view } = course;
+    const { price, title, instructor, details, image_url, rating, total_view } = course;
     console.log(course);
     return (
         <Card className="mb-5">
@@ -35,10 +36,15 @@ const CourseSummaryCard = () => {
                     <span>{rating?.number}</span>
                 </div>
                 <div>
+                    <>{price}TK</>
+                </div>
+                <div>
                     <FaEye className='me-2'></FaEye>
                     <span>{total_view}</span>
                 </div>
             </Card.Footer>
+            <Link to={'/checkout'}><Button variant="info">Check Out</Button></Link>
+
         </Card>
     );
 };

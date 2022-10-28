@@ -4,27 +4,35 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-
-
-    const { providerLogin } = useContext(AuthContext);
+    const { providerLogin, signIn, setLoading, setUser } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider()
+    const gitProvider = new GithubAuthProvider()
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                setUser(user);
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+    const handleGitSignIn = () => {
+        providerLogin(gitProvider)
+            .then(result => {
+                const user = result.user;
+                setUser(user);
                 console.log(user);
             })
             .catch(error => console.error(error))
     }
 
     const [error, setError] = useState('');
-    const { signIn, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -78,11 +86,13 @@ const Login = () => {
                     Login
                 </Button>
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
-                <Button variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                <Button onClick={handleGitSignIn} variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
             </ButtonGroup>
             <Form.Text className="text-danger">
                 {error}
             </Form.Text>
+            <p>New to course academy <Link to='/register'>Create a New Account</Link></p>
+
         </Form>
     );
 };
