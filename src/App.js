@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blog from './components/Blog/Blog';
 import CourseCard from './components/CourseCard/CourseCard';
 import CourseSummaryCard from './components/CourseSummaryCard/CourseSummaryCard';
 import Home from './components/Home/Home';
@@ -19,8 +20,8 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: '/news/:id',
-          element: <LeftSideNav></LeftSideNav>,
+          path: '/blog',
+          element: <Blog></Blog>
         },
         {
           path: '/course/:_id',
