@@ -1,11 +1,10 @@
-import { FaQq } from 'react-icons/fa';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
-import CourseCard from './components/CourseCard/CourseCard';
 import CourseSummaryCard from './components/CourseSummaryCard/CourseSummaryCard';
 import Home from './components/Home/Home';
-import LeftSideNav from './components/LeftSideNav/LeftSideNav';
+import Login from './components/Login/Login';
+import Registration from './components/Registration/Registration';
 import Main from './layout/Main';
 
 
@@ -25,8 +24,12 @@ function App() {
           element: <Blog></Blog>
         },
         {
-          path: '/blog',
-          element: <Blog></Blog>
+          path: '/login',
+          element: <Login></Login>
+        },
+        {
+          path: '/register',
+          element: <Registration></Registration>
         },
         {
           path: '/course/:_id',
