@@ -1,3 +1,4 @@
+import { FaQq } from 'react-icons/fa';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
@@ -18,6 +19,10 @@ function App() {
           path: '/',
           loader: () => fetch('http://localhost:5000/course'),
           element: <Home></Home>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         },
         {
           path: '/blog',
