@@ -1,3 +1,18 @@
+# Course Academy
+
+- you will get some premium course
+- easy to navigate
+- expart instructor
+- good support system
+- quality ensure
+
+# Live link: https://course-academy-73981.web.app
+
+# List of tecnology
+- bootstrap
+- react
+- firebase
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
