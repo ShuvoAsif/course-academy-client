@@ -2,11 +2,11 @@ import React, { useContext, useState } from 'react';
 import { ButtonGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const { providerLogin, signIn, setLoading, setUser } = useContext(AuthContext);

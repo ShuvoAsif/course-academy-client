@@ -43,7 +43,7 @@ const CourseSummaryCard = () => {
                     <span>{total_view}</span>
                 </div>
             </Card.Footer>
-            <Link to={'/checkout'}><Button variant="info">Check Out</Button></Link>
+            <Link to={'/checkout'}><Button variant="info">Get Premium Access</Button></Link>
 
         </Card>
     );

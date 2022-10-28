@@ -18,7 +18,7 @@ function App() {
       children: [
         {
           path: '/',
-          loader: () => fetch('http://localhost:5000/course'),
+          loader: () => fetch('https://course-server-two.vercel.app/course'),
           element: <Home></Home>
         },
         {
@@ -40,7 +40,7 @@ function App() {
         {
           path: '/course/:_id',
           element: <CourseSummaryCard></CourseSummaryCard>,
-          loader: ({ params }) => fetch(`http://localhost:5000/course/${params._id}`)
+          loader: ({ params }) => fetch(`https://course-server-two.vercel.app/course/${params._id}`)
         },
       ]
 
