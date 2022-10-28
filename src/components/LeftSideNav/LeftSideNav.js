@@ -19,7 +19,7 @@ const LeftSideNav = () => {
                 <div>
                     {
                         categories.map(category => <p key={category.id}>
-                            <Link to={`/category/${category.id}`}><Button className='mb-2' variant="outline-primary">{category.name}</Button></Link>
+                            <Link to={`/course/${category.id}`}><Button className='mb-1' variant="outline-info">{category.name}</Button></Link>
                         </p>)
                     }
                 </div>
