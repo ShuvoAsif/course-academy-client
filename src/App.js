@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Registration from './components/Registration/Registration';
+import DisplayError from './DisplayError/DisplayError';
 import Main from './layout/Main';
 
 
@@ -15,6 +16,7 @@ function App() {
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <DisplayError></DisplayError>,
       children: [
         {
           path: '/',
